@@ -19,8 +19,9 @@ class Product:
         self.price = price
 
     def __str__(self):
-        return "ID: {0}\tName: {1}\tPrice: {2}\tQuantity: \
-        {3}".format(self.id, self.name, self.price, self.quantity)
+        return "ID: {0}\tName: {1}\tPrice: {2}\tQuantity: {3}\
+        ".format(self.id, self.name, self.price, self.quantity)
+
 
 class Inventory:
 
@@ -34,18 +35,52 @@ class Inventory:
         for i in products:
             self.products.append(i)
 
-    def remove_product(self, product):
-        if product in self.products:
-            self.products.remove(product)
-        else:
-            print("Product not in inventory")
-    
-    def __str__(self):
+    def remove_product(self, product_id):
+        for product in self.products:
+            if product.id == product_id:
+                self.products.remove(product)
+                break
+
+    def show(self):
         for product in self.products:
             print(product)
 
-    def change_price(self, product, price):
-        if product in self.products:
-            product.change_price(price)
-        else:
-            print("Product not in inventory")
+    def edit_products(self):
+        return self.products
+
+
+"""
+orange = Product('Orange', 100, 15)
+mango = Product('Mango', 70, 15)
+apple = Product('Apple', 150, 15)
+    
+products = [orange, mango, apple]
+
+i = Inventory()
+i.add_products(products)
+
+print('-' * 63)
+i.show()
+print('-' * 63)
+
+i.remove_product(2)
+
+print('-' * 63)
+i.show()
+print('-' * 63)
+
+i.add_product(mango)
+
+print('-' * 63)
+i.show()
+print('-' * 63)
+
+a = i.edit_products()
+for val in a:
+    if val.id == 2:
+        val.remove_quantity(5)
+
+print('-' * 63)
+i.show()
+print('-' * 63)
+"""
