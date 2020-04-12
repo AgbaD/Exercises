@@ -42,8 +42,10 @@ class Inventory:
                 break
 
     def show(self):
+        print('-' * 63)
         for product in self.products:
             print(product)
+        print('-' * 63)
 
     def edit_products(self):
         return self.products
@@ -59,28 +61,20 @@ products = [orange, mango, apple]
 i = Inventory()
 i.add_products(products)
 
-print('-' * 63)
 i.show()
-print('-' * 63)
 
 i.remove_product(2)
 
-print('-' * 63)
 i.show()
-print('-' * 63)
 
 i.add_product(mango)
 
-print('-' * 63)
 i.show()
-print('-' * 63)
 
 a = i.edit_products()
 for val in a:
     if val.id == 2:
         val.remove_quantity(5)
 
-print('-' * 63)
 i.show()
-print('-' * 63)
 """
