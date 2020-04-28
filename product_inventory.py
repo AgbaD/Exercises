@@ -54,30 +54,3 @@ class Inventory:
         return self.products
 
 
-"""
-orange = Product('Orange', 100, 15)
-mango = Product('Mango', 70, 15)
-apple = Product('Apple', 150, 15)
-    
-products = [orange, mango, apple]
-
-i = Inventory()
-i.add_products(products)
-
-i.show()
-
-i.remove_product(2)
-
-i.show()
-
-i.add_product(mango)
-
-i.show()
-
-a = i.edit_products()
-for val in a:
-    if val.id == 2:
-        val.remove_quantity(5)
-
-i.show()
-"""
