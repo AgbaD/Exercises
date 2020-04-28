@@ -1,3 +1,6 @@
+#!/usr/bin/python
+# Author:	@BlankGodd
+
 class Product:
 
     __id = 0
